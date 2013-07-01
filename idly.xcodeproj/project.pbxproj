@@ -1,0 +1,288 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E356A8BF1780FEBB00EFBE9B /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356A8BE1780FEBB00EFBE9B /* UIKit.framework */; };
+		E356A8C11780FEBB00EFBE9B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356A8C01780FEBB00EFBE9B /* Foundation.framework */; };
+		E356A8C31780FEBB00EFBE9B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E356A8C21780FEBB00EFBE9B /* CoreGraphics.framework */; };
+		E356A8C91780FEBB00EFBE9B /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E356A8C71780FEBB00EFBE9B /* InfoPlist.strings */; };
+		E356A8CB1780FEBB00EFBE9B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E356A8CA1780FEBB00EFBE9B /* main.m */; };
+		E356A8CF1780FEBB00EFBE9B /* PKOAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E356A8CE1780FEBB00EFBE9B /* PKOAppDelegate.m */; };
+		E356A8D11780FEBB00EFBE9B /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = E356A8D01780FEBB00EFBE9B /* Default.png */; };
+		E356A8D31780FEBB00EFBE9B /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E356A8D21780FEBB00EFBE9B /* Default@2x.png */; };
+		E356A8D51780FEBB00EFBE9B /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E356A8D41780FEBB00EFBE9B /* Default-568h@2x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E356A8BB1780FEBB00EFBE9B /* idly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = idly.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E356A8BE1780FEBB00EFBE9B /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		E356A8C01780FEBB00EFBE9B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E356A8C21780FEBB00EFBE9B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E356A8C61780FEBB00EFBE9B /* idly-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "idly-Info.plist"; sourceTree = "<group>"; };
+		E356A8C81780FEBB00EFBE9B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E356A8CA1780FEBB00EFBE9B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E356A8CC1780FEBB00EFBE9B /* idly-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "idly-Prefix.pch"; sourceTree = "<group>"; };
+		E356A8CD1780FEBB00EFBE9B /* PKOAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PKOAppDelegate.h; sourceTree = "<group>"; };
+		E356A8CE1780FEBB00EFBE9B /* PKOAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PKOAppDelegate.m; sourceTree = "<group>"; };
+		E356A8D01780FEBB00EFBE9B /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		E356A8D21780FEBB00EFBE9B /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		E356A8D41780FEBB00EFBE9B /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E356A8B81780FEBB00EFBE9B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356A8BF1780FEBB00EFBE9B /* UIKit.framework in Frameworks */,
+				E356A8C11780FEBB00EFBE9B /* Foundation.framework in Frameworks */,
+				E356A8C31780FEBB00EFBE9B /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E356A8B21780FEBB00EFBE9B = {
+			isa = PBXGroup;
+			children = (
+				E356A8C41780FEBB00EFBE9B /* idly */,
+				E356A8BD1780FEBB00EFBE9B /* Frameworks */,
+				E356A8BC1780FEBB00EFBE9B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E356A8BC1780FEBB00EFBE9B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E356A8BB1780FEBB00EFBE9B /* idly.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E356A8BD1780FEBB00EFBE9B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E356A8BE1780FEBB00EFBE9B /* UIKit.framework */,
+				E356A8C01780FEBB00EFBE9B /* Foundation.framework */,
+				E356A8C21780FEBB00EFBE9B /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E356A8C41780FEBB00EFBE9B /* idly */ = {
+			isa = PBXGroup;
+			children = (
+				E356A8CD1780FEBB00EFBE9B /* PKOAppDelegate.h */,
+				E356A8CE1780FEBB00EFBE9B /* PKOAppDelegate.m */,
+				E356A8C51780FEBB00EFBE9B /* Supporting Files */,
+			);
+			path = idly;
+			sourceTree = "<group>";
+		};
+		E356A8C51780FEBB00EFBE9B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E356A8C61780FEBB00EFBE9B /* idly-Info.plist */,
+				E356A8C71780FEBB00EFBE9B /* InfoPlist.strings */,
+				E356A8CA1780FEBB00EFBE9B /* main.m */,
+				E356A8CC1780FEBB00EFBE9B /* idly-Prefix.pch */,
+				E356A8D01780FEBB00EFBE9B /* Default.png */,
+				E356A8D21780FEBB00EFBE9B /* Default@2x.png */,
+				E356A8D41780FEBB00EFBE9B /* Default-568h@2x.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E356A8BA1780FEBB00EFBE9B /* idly */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E356A8D81780FEBB00EFBE9B /* Build configuration list for PBXNativeTarget "idly" */;
+			buildPhases = (
+				E356A8B71780FEBB00EFBE9B /* Sources */,
+				E356A8B81780FEBB00EFBE9B /* Frameworks */,
+				E356A8B91780FEBB00EFBE9B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = idly;
+			productName = idly;
+			productReference = E356A8BB1780FEBB00EFBE9B /* idly.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E356A8B31780FEBB00EFBE9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = PKO;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Gage IT";
+			};
+			buildConfigurationList = E356A8B61780FEBB00EFBE9B /* Build configuration list for PBXProject "idly" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E356A8B21780FEBB00EFBE9B;
+			productRefGroup = E356A8BC1780FEBB00EFBE9B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E356A8BA1780FEBB00EFBE9B /* idly */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E356A8B91780FEBB00EFBE9B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356A8C91780FEBB00EFBE9B /* InfoPlist.strings in Resources */,
+				E356A8D11780FEBB00EFBE9B /* Default.png in Resources */,
+				E356A8D31780FEBB00EFBE9B /* Default@2x.png in Resources */,
+				E356A8D51780FEBB00EFBE9B /* Default-568h@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E356A8B71780FEBB00EFBE9B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E356A8CB1780FEBB00EFBE9B /* main.m in Sources */,
+				E356A8CF1780FEBB00EFBE9B /* PKOAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E356A8C71780FEBB00EFBE9B /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E356A8C81780FEBB00EFBE9B /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E356A8D61780FEBB00EFBE9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		E356A8D71780FEBB00EFBE9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E356A8D91780FEBB00EFBE9B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "idly/idly-Prefix.pch";
+				INFOPLIST_FILE = "idly/idly-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		E356A8DA1780FEBB00EFBE9B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "idly/idly-Prefix.pch";
+				INFOPLIST_FILE = "idly/idly-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E356A8B61780FEBB00EFBE9B /* Build configuration list for PBXProject "idly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E356A8D61780FEBB00EFBE9B /* Debug */,
+				E356A8D71780FEBB00EFBE9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E356A8D81780FEBB00EFBE9B /* Build configuration list for PBXNativeTarget "idly" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E356A8D91780FEBB00EFBE9B /* Debug */,
+				E356A8DA1780FEBB00EFBE9B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E356A8B31780FEBB00EFBE9B /* Project object */;
+}
