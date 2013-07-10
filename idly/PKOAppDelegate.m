@@ -1,8 +1,8 @@
 //
 //  PKOAppDelegate.m
-//  idly
+//  pekko
 //
-//  Created by Idly App User on 6/30/13.
+//  Created by Brandon Eum on 3/3/13.
 //  Copyright (c) 2013 Gage IT. All rights reserved.
 //
 
@@ -10,40 +10,64 @@
 
 @implementation PKOAppDelegate
 
+@synthesize window = _window;
+@synthesize commonTabController=_commonTabController;
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Get a shared instance of the user and set it up
+    user = [PKOUserContainer sharedContainer];
+    prefs = [NSUserDefaults standardUserDefaults];
+    user.apikey        = [prefs objectForKey:@"api_key"];
+    user.info.username = [prefs objectForKey:@"user_name"];
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"app-bg.png"]];
+    
+    // Let the device know we want to receive push notifications
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     (UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)];
+    
+    //UIRemoteNotificationType enabledTypes = [[UIApplication sharedApplication] enabledRemoteNotificationTypes];
+    
+    self.commonTabController = [[CommonTabController alloc] initWithNibName:@"CommonTabController" bundle:nil];
+    
+    requestManager = [[PKORequestManager alloc] init];
+    self.window.rootViewController = self.commonTabController;
+    
     [self.window makeKeyAndVisible];
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application {
+    [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
+- (void)applicationDidEnterBackground:(UIApplication *)application {}
+- (void)applicationWillEnterForeground:(UIApplication *)application {}
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-}
-
+// Set the badge number to 0 when it launches
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    application.applicationIconBadgeNumber = 0;
 }
 
-- (void)applicationWillTerminate:(UIApplication *)application
+- (void)applicationWillTerminate:(UIApplication *)application {}
+
+#pragma mark - Push Notification Handling
+
+// Update the push ID on this user's account
+- (void)application:(UIApplication*)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData*)deviceToken
 {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
+    [dict setObject:[deviceToken description] forKey:@"push_id"];
+    [requestManager updateAccount:dict];
+}
+
+- (void)application:(UIApplication*)application didFailToRegisterForRemoteNotificationsWithError:(NSError*)error
+{
+	NSLog(@"Failed to get token, error: %@", error);
 }
 
 @end
