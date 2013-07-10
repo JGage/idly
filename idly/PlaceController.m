@@ -54,7 +54,7 @@ int moodViewTag = 157;
         locationManager                = [[CLLocationManager alloc] init];
         locationManager.delegate       = self;
         locationManager.distanceFilter = 100;
-        [locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+        [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
         
         // Recenter the map on the initial load
         isFirstLocationUpdate = YES;
