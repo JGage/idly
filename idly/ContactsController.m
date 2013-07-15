@@ -51,7 +51,6 @@
     if (!originalHeight) {
         originalHeight = self.view.frame.size.height;
     }
-    NSLog(@"Original HEIGHT >>>>>> %f", originalHeight);
     
     [super viewDidLoad];
     statusImage.image = [UIImage imageNamed:@"on.png"];    
