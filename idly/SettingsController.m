@@ -29,6 +29,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    // Blank out the error message
+    error.text = @"";
     
     // Set the original height and width
     originalHeight = self.view.frame.size.height;
@@ -91,14 +94,17 @@
     phone.text      = user.info.phone;
     first_name.text = user.info.first_name;
     last_name.text  = user.info.last_name;
+    error.text = @"";
 }
 
 - (void) hideWithCallback:(PKOGenericCallback)callback
 {
     [first_name resignFirstResponder];
     [last_name resignFirstResponder];
-    [password resignFirstResponder];
-    
+    [oldPassword resignFirstResponder];
+    [newPassword resignFirstResponder];
+    error.text = @"";
+
     // set the view below the screen then hide it
     [UIView animateWithDuration:0.5 animations:^{
         [self moveViewOutOfFrame];
@@ -139,7 +145,8 @@
     // Resign the first responder
     [first_name resignFirstResponder];
     [last_name resignFirstResponder];
-    [password resignFirstResponder];
+    [oldPassword resignFirstResponder];
+    [newPassword resignFirstResponder];
     
     NSArray *info = [[NSArray alloc] initWithObjects:first_name.text, last_name.text, nil];
     NSArray *keys = [[NSArray alloc] initWithObjects:@"first_name", @"last_name", nil];
@@ -152,13 +159,28 @@
     // Resign the first responder
     [first_name resignFirstResponder];
     [last_name resignFirstResponder];
-    [password resignFirstResponder];
-    
+    [oldPassword resignFirstResponder];
+    [newPassword resignFirstResponder];
+
+    error.textColor = [UIColor redColor];
+    if (oldPassword.text.length == 0) {
+        error.text = @"Please enter your current password";
+        return;
+    }
+    if (newPassword.text.length == 0) {
+        error.text = @"Your new password can't be blank";
+        return;
+    }
+
+    // Erase the error
+    error.text = @"";
+
     [requestManager updatePasswordWithUsername:user.username
-                                   andPassword:user.password
-                                andNewPassword:password.text];
-    temp_pass = password.text;
-    password.text = nil;
+                                   andPassword:oldPassword.text
+                                andNewPassword:newPassword.text];
+    temp_pass = newPassword.text;
+    newPassword.text = nil;
+    oldPassword.text = nil;
 }
 
 #pragma mark - Action Sheet and Image Picker Delegate
@@ -244,6 +266,9 @@
 
 - (void) didUpdatePassword:(NSDictionary *)account
 {
+    error.text = @"Password updated!";
+    error.textColor = [UIColor greenColor];
+
     [user setPassword:temp_pass];
     temp_pass = nil;
 }

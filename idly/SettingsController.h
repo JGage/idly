@@ -29,8 +29,8 @@
     UIImageView *selectedImage;
     
     
-    __weak IBOutlet UILabel *phone, *user_name;
-    __weak IBOutlet UITextField *first_name, *last_name, *password;
+    __weak IBOutlet UILabel *phone, *user_name, *error;
+    __weak IBOutlet UITextField *first_name, *last_name, *oldPassword, *newPassword;
     
     float originalHeight, originalWidth;
     NSString *temp_pass;

@@ -130,11 +130,11 @@ int moodViewTag = 157;
     }
     
     
-    MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
-    MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
+    //MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
+    //MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
     
     return;
-    [_mapView setRegion:adjustedRegion animated:YES];
+    //[_mapView setRegion:adjustedRegion animated:YES];
 }
 
 - (void) viewDidAppear:(BOOL)animated
