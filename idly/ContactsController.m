@@ -28,13 +28,14 @@
         selectedContacts   = [[NSMutableDictionary alloc] init];
         selectedContactMap = [[NSMutableDictionary alloc] init];
         activeContactMap   = [[NSMutableDictionary alloc] init];
-        
+
+      /*
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(getActiveContacts)
                                                      name:@"mastertimer"
                                                    object:nil
         ];
-        
+        */
         isSelectAll = NO;
     }
     return self;
@@ -349,6 +350,8 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 // getActiveContacts method retrieves all synced contacts.  All synced/active contacts will be listed in ActivationQueue (ContactsController).
 - (void) getActiveContacts
 {
+    [loadingSymbol startAnimating];
+    [tableController.tableView setHidden:YES];
     [requestManager initiateAllContactInfoRetrieval];
 }
 
@@ -359,12 +362,17 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 - (void) requestDidReceiveForbidden
 {
     // TODO: Call the places controller
+    [loadingSymbol stopAnimating];
+    [tableController.tableView setHidden:NO];
 }
 
 // Result of hitting the select all button
 // Mark all of the contacts as isVisible and reload the table
 - (void) didReceiveActiveContacts:(NSDictionary *)contacts
 {
+    [loadingSymbol stopAnimating];
+    [tableController.tableView setHidden:NO];
+
     for (PKOContact *contact in tableController.activeContacts) {
         contact.isVisible = isSelectAll;
         contact.display_status = isSelectAll ? @"v" : @"e";
@@ -375,9 +383,6 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
 
 - (void) didReceiveAllContactInfo:(NSDictionary *)contacts
 {
-    // Stop the loading symbol
-    [loadingSymbol stopAnimating];
-    
     // Empty all of the contacts from the table controller and contact array
     [user.activeContacts removeAllObjects];
     [activeContactMap removeAllObjects];
@@ -426,7 +431,11 @@ clickedButtonAtIndex:(NSInteger)buttonIndex
         [activeContacts addObject:mycontact];
         [user.activeContacts addObject:mycontact];
     }
-    
+
+    // Stop the loading symbol
+    [loadingSymbol stopAnimating];
+    [tableController.tableView setHidden:NO];
+
     [delegate didReceiveContacts:activeContacts];
 }
 
