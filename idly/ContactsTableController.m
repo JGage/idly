@@ -48,10 +48,10 @@
     }
     
     // Set the table to the bottom of the screen
-    if (!yorigin) {
+    if (!yorigin || yorigin == 0) {
         yorigin = (self.view.superview.frame.size.height - height);
     }
-    
+
     [self.view setFrame:CGRectMake(0, yorigin, width, 210)];
     [super viewWillAppear:animated];
 }

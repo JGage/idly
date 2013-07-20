@@ -21,6 +21,7 @@
 - (void) didDismissContactsView;
 - (void) didReceiveContacts:(NSArray *)contacts;
 - (void) didSelectContact:(PKOContact *)contact;
+- (void) showAddressBook:(NSArray *)activeContacts;
 
 @end
 
@@ -63,13 +64,12 @@
 @property (nonatomic, assign) IBOutlet UILabel *label;
 
 - (IBAction) mapClicked:(id)sender;
-- (IBAction) syncContactsClicked:(id)sender;
+- (IBAction) addContactsClicked:(id)sender;
 - (IBAction) selectAllContacts:(id)sender;
 
 - (void) showView;
 - (void) dismissView;
 - (IBAction) edit:(id)sender;
-- (void) showContacts;
 - (void) triggerSMSViewAlert;
 - (void) sendSmsToNonappUsers;
 

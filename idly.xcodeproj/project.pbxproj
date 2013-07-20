@@ -373,7 +373,6 @@
 				E356A9621781058100EFBE9B /* App */,
 				E356A9611781057400EFBE9B /* Libraries */,
 				E356A9641781059600EFBE9B /* MapView */,
-				E356A9631781058900EFBE9B /* SignupAndLogin */,
 				E356A8C51780FEBB00EFBE9B /* Supporting Files */,
 			);
 			path = idly;
@@ -510,6 +509,7 @@
 		E356A9641781059600EFBE9B /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				E356A9631781058900EFBE9B /* SignupAndLogin */,
 				42870F4E179A2FBB0024D5EF /* New Queue */,
 				E356AA051781099900EFBE9B /* OutOfRange */,
 				E356AA041781099000EFBE9B /* Contacts */,

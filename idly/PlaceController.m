@@ -600,6 +600,23 @@ int moodViewTag = 157;
     [self showButtons];
 }
 
+// shows contacts from addressbook
+- (void) showAddressBook:(NSArray *)activeContacts
+{
+
+    // TODO: Make the MultiContacts controller its own delegate
+    MultiContacts *controller = [[MultiContacts alloc] initWithNibName:@"MultiContacts" bundle:nil];
+    controller.delegate = contactsController;
+    controller.requestData = DATA_CONTACT_TELEPHONE;
+    controller.showModal = YES;
+    controller.showCheckButton = YES;
+
+    for (PKOContact *contact in activeContacts) {
+      [controller addExistingContact:contact];
+    }
+    [self presentViewController:controller animated:YES completion:^{}];
+}
+
 // Whenever a 403 is received, show the signup/login view
 - (void) showSignupView
 {

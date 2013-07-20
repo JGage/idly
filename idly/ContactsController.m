@@ -100,7 +100,7 @@
 {
     [UIView animateWithDuration:0.5
         animations:^{
-            float yOrigin = (self.view.superview.frame.size.height + self.view.frame.size.height);
+            float yOrigin = (self.view.superview.frame.size.height + originalHeight);
             [self.view setFrame:CGRectMake(0, yOrigin, self.view.frame.size.width, self.view.frame.size.height)];
         }
         completion:^(BOOL finished) {
@@ -235,9 +235,10 @@
     [self dismissView];
 }
 
-- (IBAction) syncContactsClicked:(id)sender
+// Tell the place controller to show the address book
+- (IBAction) addContactsClicked:(id)sender
 {
-    [self showContacts];
+    [self.delegate showAddressBook:activeContacts];
 }
 
 - (IBAction) selectAllContacts:(id)sender
@@ -258,20 +259,20 @@
 #pragma mark- Contacts Manipulation
 
 // shows contacts from addressbook
-- (void)showContacts
-{
-    // TODO: Make the MultiContacts controller its own delegate
-    MultiContacts *controller = [[MultiContacts alloc] initWithNibName:@"MultiContacts" bundle:nil];
-    controller.delegate = self;
-    controller.requestData = DATA_CONTACT_TELEPHONE;
-    controller.showModal = YES;
-    controller.showCheckButton = YES;  
-
-    for (PKOContact *contact in activeContacts) {
-        [controller addExistingContact:contact];
-    }
-    [self presentViewController:controller animated:YES completion:^{}];
-}
+//- (void)showContacts
+//{
+//    // TODO: Make the MultiContacts controller its own delegate
+//    MultiContacts *controller = [[MultiContacts alloc] initWithNibName:@"MultiContacts" bundle:nil];
+//    controller.delegate = self;
+//    controller.requestData = DATA_CONTACT_TELEPHONE;
+//    controller.showModal = YES;
+//    controller.showCheckButton = YES;  
+//
+//    for (PKOContact *contact in activeContacts) {
+//        [controller addExistingContact:contact];
+//    }
+//    [self presentViewController:controller animated:YES completion:^{}];
+//}
 
 #pragma mark- Contact Table View Delegate
 

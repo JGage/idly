@@ -115,6 +115,7 @@
 - (void) showSyncRequestWithName:(NSString *)name andImage:(UIImage *)img andUsername:(NSString *)username;
 
 - (void) showContactActionMenuWithContact: (PKOContact *) contact;
+- (void) showAddressBook:(NSArray *)activeContacts;
 - (void) showSignupView;
 
 // Map view communication methods
