@@ -334,7 +334,7 @@
         [requestManager uploadProfileImage:self.imageData];
     }
     
-    [delegate showPlacesViewController];
+    [delegate dismissSignupView];
 }
 
 @end

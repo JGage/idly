@@ -11,7 +11,7 @@
 
 @protocol SignupControllerDelegate <NSObject>
 
-- (void) showPlacesViewController;
+- (void) dismissSignupView;
 
 @end
 

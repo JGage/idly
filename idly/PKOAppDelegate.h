@@ -12,17 +12,22 @@
 #import "PKOUserContainer.h"
 
 
-#import "CommonTabController.h"
+#import "PlaceController.h"
 
 
-@interface PKOAppDelegate : UIResponder <UIApplicationDelegate>
+@interface PKOAppDelegate : UIResponder <UIApplicationDelegate, PKORequestManagerDelegate>
 {
     NSUserDefaults *prefs;
     PKORequestManager *requestManager;
     PKOUserContainer *user;
+    NSTimer *timer;
+  PlaceController *placeController;
 }
 
 @property (strong, nonatomic) UIWindow *window;
-@property (nonatomic, strong) CommonTabController *commonTabController;
 
+- (void) onTick;
+- (void) startTimer;
+- (void) stopTimer;
+- (void) getSyncRequests;
 @end

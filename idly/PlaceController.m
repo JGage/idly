@@ -7,7 +7,7 @@
 
 @implementation PlaceController
 
-@synthesize commonTabController, contactsController;
+@synthesize contactsController;
 
 int btn=0;
 NSString *str;
@@ -600,6 +600,31 @@ int moodViewTag = 157;
     [self showButtons];
 }
 
+// Whenever a 403 is received, show the signup/login view
+- (void) showSignupView
+{
+    // Do nothing if the signup controller is already visible
+    if (isSignupVisible) {
+        return;
+    }
+
+    if (!signupController) {
+        signupController = [[SignupController alloc] initWithNibName:nil bundle:nil];
+        [signupController setDelegate:self];
+    }
+
+    isSignupVisible = true;
+    [self presentViewController:signupController animated:YES completion:^{}];
+}
+
+- (void) dismissSignupView
+{
+    signupController = nil;
+    [self dismissViewControllerAnimated:YES completion:^{
+        isSignupVisible = NO;
+    }];
+}
+
 #pragma mark- Sending SMS
 
 - (void) showSMSView:(PKOContact *)contact
@@ -686,7 +711,7 @@ int moodViewTag = 157;
 
 - (void) requestDidReceiveForbidden
 {
-    [commonTabController requestDidReceiveForbidden];
+    [self showSignupView];
 }
 
 - (void) requestDidReceiveBadRequest:(NSDictionary *)response

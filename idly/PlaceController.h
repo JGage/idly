@@ -26,6 +26,7 @@
 #import "OutOfRangeTableController.h"
 #import "ContactActionMenuController.h"
 #import "SettingsController.h"
+#import "SignupController.h"
 
 
 #define METERS_PER_MILE 1609.344
@@ -39,7 +40,8 @@
     StatusMessageControllerDelegate,
     ContactsControllerDelegate,
     PKORequestManagerDelegate,
-    MoodControllerDelegate
+    MoodControllerDelegate,
+    SignupControllerDelegate
 >
 {
     PKORequestManager *requestManager;
@@ -50,9 +52,6 @@
     
     // Map View
     __weak IBOutlet MKMapView *_mapView;
-    
-    // Maintain a weak reference to the main view controller to send it messages
-    __weak UIViewController<PKORequestManagerDelegate> *commonTabController;
     
     // View Outlets
     __weak IBOutlet UIButton *msgButton;
@@ -69,7 +68,8 @@
     MoodController *moodController;
     OutOfRangeMaskController *outOfRangeMaskController;
     OutOfRangeTableController *outOfRangeTableController;
-    
+    SignupController *signupController;
+
     ContactActionMenuController *contactActionMenuController;
     PKOContact *actionMenuSubject;
     
@@ -88,10 +88,10 @@
     BOOL isOutOfRangeMaskVisible;
     BOOL isOutOfRangeTableVisible;
     BOOL isUserOutOfRange;
+    BOOL isSignupVisible;
 }
 
 @property (nonatomic, strong) ContactsController *contactsController;
-@property (nonatomic, weak) UIViewController *commonTabController;
 
 // Manage the CLLocation Library's accuracy
 - (void) setLocationAccuracyToBackgroundLevel;
@@ -115,6 +115,7 @@
 - (void) showSyncRequestWithName:(NSString *)name andImage:(UIImage *)img andUsername:(NSString *)username;
 
 - (void) showContactActionMenuWithContact: (PKOContact *) contact;
+- (void) showSignupView;
 
 // Map view communication methods
 - (void) recenterMapWithLatitude:(CLLocationDegrees)latitude andLongitude:(CLLocationDegrees)longitude;

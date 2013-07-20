@@ -83,8 +83,6 @@
 		E356A990178105C800EFBE9B /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = E356A971178105C800EFBE9B /* ASIHTTPRequest.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E356A991178105C800EFBE9B /* ASIInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = E356A975178105C800EFBE9B /* ASIInputStream.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		E356A992178105C800EFBE9B /* ASINetworkQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = E356A977178105C800EFBE9B /* ASINetworkQueue.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
-		E356A993178105C800EFBE9B /* CommonTabController.m in Sources */ = {isa = PBXBuildFile; fileRef = E356A97A178105C800EFBE9B /* CommonTabController.m */; };
-		E356A994178105C800EFBE9B /* CommonTabController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E356A97B178105C800EFBE9B /* CommonTabController.xib */; };
 		E356A995178105C800EFBE9B /* ContactActionMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = E356A97D178105C800EFBE9B /* ContactActionMenuController.m */; };
 		E356A996178105C800EFBE9B /* ContactActionMenuController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E356A97E178105C800EFBE9B /* ContactActionMenuController.xib */; };
 		E356A997178105C800EFBE9B /* ContactsController.m in Sources */ = {isa = PBXBuildFile; fileRef = E356A980178105C800EFBE9B /* ContactsController.m */; };
@@ -224,9 +222,6 @@
 		E356A976178105C800EFBE9B /* ASINetworkQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASINetworkQueue.h; sourceTree = "<group>"; };
 		E356A977178105C800EFBE9B /* ASINetworkQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASINetworkQueue.m; sourceTree = "<group>"; };
 		E356A978178105C800EFBE9B /* ASIProgressDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIProgressDelegate.h; sourceTree = "<group>"; };
-		E356A979178105C800EFBE9B /* CommonTabController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonTabController.h; sourceTree = "<group>"; };
-		E356A97A178105C800EFBE9B /* CommonTabController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CommonTabController.m; sourceTree = "<group>"; };
-		E356A97B178105C800EFBE9B /* CommonTabController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommonTabController.xib; sourceTree = "<group>"; };
 		E356A97C178105C800EFBE9B /* ContactActionMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactActionMenuController.h; sourceTree = "<group>"; };
 		E356A97D178105C800EFBE9B /* ContactActionMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactActionMenuController.m; sourceTree = "<group>"; };
 		E356A97E178105C800EFBE9B /* ContactActionMenuController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ContactActionMenuController.xib; sourceTree = "<group>"; };
@@ -324,6 +319,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		42870F4E179A2FBB0024D5EF /* New Queue */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "New Queue";
+			sourceTree = "<group>";
+		};
 		E356A8B21780FEBB00EFBE9B = {
 			isa = PBXGroup;
 			children = (
@@ -486,9 +488,6 @@
 		E356A9621781058100EFBE9B /* App */ = {
 			isa = PBXGroup;
 			children = (
-				E356A979178105C800EFBE9B /* CommonTabController.h */,
-				E356A97A178105C800EFBE9B /* CommonTabController.m */,
-				E356A97B178105C800EFBE9B /* CommonTabController.xib */,
 				E356A8CD1780FEBB00EFBE9B /* PKOAppDelegate.h */,
 				E356A8CE1780FEBB00EFBE9B /* PKOAppDelegate.m */,
 			);
@@ -511,6 +510,7 @@
 		E356A9641781059600EFBE9B /* MapView */ = {
 			isa = PBXGroup;
 			children = (
+				42870F4E179A2FBB0024D5EF /* New Queue */,
 				E356AA051781099900EFBE9B /* OutOfRange */,
 				E356AA041781099000EFBE9B /* Contacts */,
 				E356AA031781097C00EFBE9B /* PendingRequest */,
@@ -803,7 +803,6 @@
 				E356A95B178104B400EFBE9B /* upset.png in Resources */,
 				E356A95C178104B400EFBE9B /* user-default.png in Resources */,
 				E356A95D178104B400EFBE9B /* user-pic.png in Resources */,
-				E356A994178105C800EFBE9B /* CommonTabController.xib in Resources */,
 				E356A996178105C800EFBE9B /* ContactActionMenuController.xib in Resources */,
 				E356A998178105C800EFBE9B /* ContactsController.xib in Resources */,
 				E356A99A178105C800EFBE9B /* ContactsTableController.xib in Resources */,
@@ -840,7 +839,6 @@
 				E356A990178105C800EFBE9B /* ASIHTTPRequest.m in Sources */,
 				E356A991178105C800EFBE9B /* ASIInputStream.m in Sources */,
 				E356A992178105C800EFBE9B /* ASINetworkQueue.m in Sources */,
-				E356A993178105C800EFBE9B /* CommonTabController.m in Sources */,
 				E356A995178105C800EFBE9B /* ContactActionMenuController.m in Sources */,
 				E356A997178105C800EFBE9B /* ContactsController.m in Sources */,
 				E356A999178105C800EFBE9B /* ContactsTableController.m in Sources */,
