@@ -128,13 +128,14 @@ int moodViewTag = 157;
         zoomLocation.latitude  = 0;
         zoomLocation.longitude = 0;
     }
-    
-    
+
+
+    [self setLocationAccuracyToForegroundLevel];
+    // Change the view to some random location
     //MKCoordinateRegion viewRegion = MKCoordinateRegionMakeWithDistance(zoomLocation, 0.5*METERS_PER_MILE, 0.5*METERS_PER_MILE);
     //MKCoordinateRegion adjustedRegion = [_mapView regionThatFits:viewRegion];
-    
-    return;
     //[_mapView setRegion:adjustedRegion animated:YES];
+    return;
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -154,6 +155,16 @@ int moodViewTag = 157;
 }
 
 #pragma mark- CLLocation Delegate methods
+
+- (void) setLocationAccuracyToBackgroundLevel
+{
+  [locationManager setDesiredAccuracy:kCLLocationAccuracyHundredMeters];
+}
+
+- (void) setLocationAccuracyToForegroundLevel
+{
+  [locationManager setDesiredAccuracy:kCLLocationAccuracyBest];
+}
 
 // gets current location from user device
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {

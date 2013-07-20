@@ -52,7 +52,7 @@
         yorigin = (self.view.superview.frame.size.height - height);
     }
     
-    [self.view setFrame:CGRectMake(0, yorigin, width, 300)];
+    [self.view setFrame:CGRectMake(0, yorigin, width, 210)];
     [super viewWillAppear:animated];
 }
 

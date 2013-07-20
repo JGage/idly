@@ -93,6 +93,10 @@
 @property (nonatomic, strong) ContactsController *contactsController;
 @property (nonatomic, weak) UIViewController *commonTabController;
 
+// Manage the CLLocation Library's accuracy
+- (void) setLocationAccuracyToBackgroundLevel;
+- (void) setLocationAccuracyToForegroundLevel;
+
 // UI interactions
 - (IBAction) messageButtonClicked:(id)sender;
 - (IBAction) settingsButtonClicked:(id)sender;

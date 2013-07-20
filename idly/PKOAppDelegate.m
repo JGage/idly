@@ -44,13 +44,17 @@
     [[NSURLCache sharedURLCache] removeAllCachedResponses];
 }
 
-- (void)applicationDidEnterBackground:(UIApplication *)application {}
+- (void)applicationDidEnterBackground:(UIApplication *)application {
+    [self.commonTabController.placeController setLocationAccuracyToBackgroundLevel];
+}
+
 - (void)applicationWillEnterForeground:(UIApplication *)application {}
 
 // Set the badge number to 0 when it launches
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
     application.applicationIconBadgeNumber = 0;
+    [self.commonTabController.placeController setLocationAccuracyToForegroundLevel];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {}

@@ -51,6 +51,8 @@
     BOOL isSignupVisible;
 }
 
+@property (nonatomic, strong) PlaceController *placeController;
+
 @property (nonatomic, readwrite) BOOL tabBarShowing;
 
 - (void) getSyncRequests;

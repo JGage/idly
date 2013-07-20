@@ -7,7 +7,7 @@
 #import "PKOAppDelegate.h"
 
 @implementation CommonTabController
-@synthesize tabBarShowing;
+@synthesize tabBarShowing, placeController;
 
 int tick=0;
 
